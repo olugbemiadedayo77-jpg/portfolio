@@ -135,8 +135,110 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:1.8rem 4
 .fi.vis{opacity:1;transform:none}
 .d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
 
-@media(max-width:1100px){.hero-stats{position:relative;right:auto;top:auto;transform:none;flex-direction:row;flex-wrap:wrap;margin-top:3rem}}
-@media(max-width:900px){nav{padding:1rem 1.5rem}.nav-links{display:none}#hero{padding:7rem 1.5rem 4rem}section{padding:4rem 1.5rem}.about-grid{grid-template-columns:1fr}.proj{grid-template-columns:1fr}.proj-visual{min-height:200px}.skills-grid{grid-template-columns:1fr 1fr}footer{flex-direction:column;gap:.4rem;text-align:center}}
+
+/* ── TABLET ─────────────────────────────────── */
+@media(max-width:1100px){
+  .hero-stats{
+    position:relative;right:auto;top:auto;transform:none;
+    flex-direction:row;flex-wrap:wrap;margin-top:3rem;
+    align-self:flex-start;
+  }
+  .hstat{padding:1rem 1.4rem;flex:1;min-width:120px}
+}
+
+/* ── MOBILE ──────────────────────────────────── */
+@media(max-width:768px){
+  nav{padding:1rem 1.2rem}
+  .nav-links{display:none}
+  .nav-logo{font-size:1rem}
+
+  #hero{
+    padding:6rem 1.2rem 3rem;
+    min-height:auto;
+  }
+  .hero-grid-bg{display:none}
+  .hero-glow{width:280px;height:280px;right:-20%;top:10%}
+  .hero-eyebrow{font-size:.62rem;margin-bottom:1rem}
+  .hero-name{font-size:clamp(2.8rem,13vw,4.5rem);margin-bottom:.8rem}
+  .hero-desc{font-size:.82rem;margin-bottom:1.8rem;line-height:1.65}
+  .hero-tags{gap:.4rem;margin-bottom:2rem}
+  .htag{font-size:.6rem;padding:.28rem .65rem}
+  .hero-cta{flex-direction:column;gap:.7rem}
+  .btn-a,.btn-b{text-align:center;padding:.8rem 1.5rem;font-size:.72rem}
+  .hero-stats{
+    position:relative;right:auto;top:auto;transform:none;
+    flex-direction:row;flex-wrap:wrap;margin-top:2rem;
+    border:1px solid var(--border);width:100%;
+  }
+  .hstat{
+    padding:.9rem 1rem;flex:1;min-width:calc(50% - 1px);
+    border-right:1px solid var(--border);
+  }
+  .hstat:nth-child(even){border-right:none}
+  .hstat:nth-child(n+3){border-top:1px solid var(--border)}
+  .hstat-num{font-size:1.8rem}
+  .hstat-label{font-size:.55rem}
+  .scroll-hint{display:none}
+
+  section{padding:3.5rem 1.2rem}
+  .sec-h2{margin-bottom:2rem;font-size:clamp(1.7rem,7vw,2.5rem)}
+
+  /* About */
+  .about-grid{grid-template-columns:1fr;gap:2rem}
+  .about-text p{font-size:.92rem;line-height:1.78}
+  .about-panel-row{padding:.9rem 1rem}
+  .apr-value{font-size:.88rem}
+
+  /* Projects */
+  .proj{grid-template-columns:1fr}
+  .proj-visual{
+    min-height:200px;
+    border-right:none;
+    border-bottom:1px solid var(--border);
+  }
+  .proj-imgs img{min-height:90px}
+  .proj-body{padding:1.5rem 1.2rem}
+  .proj-title{font-size:1.5rem}
+  .proj-sub{font-size:.7rem;margin-bottom:.9rem}
+  .proj-desc{font-size:.87rem;line-height:1.72;margin-bottom:1rem}
+  .proj-specs{grid-template-columns:1fr;gap:.4rem;margin-bottom:1rem}
+  .spec{font-size:.68rem}
+  .tool-pill{font-size:.6rem;padding:.18rem .55rem}
+  .lang-tabs{flex-wrap:wrap}
+  .lang-tab{font-size:.6rem;padding:.35rem .75rem}
+  .code-block{padding:.9rem 1rem}
+  .code-block pre{font-size:.7rem;line-height:1.6}
+  .proj.code-proj .proj-body{padding:1.5rem 1.2rem}
+
+  /* Skills */
+  .skills-grid{grid-template-columns:1fr}
+  .skill-card{padding:1.4rem 1.2rem}
+  .skill-title{font-size:.95rem}
+  .skill-item{font-size:.7rem}
+
+  /* Contact */
+  #contact{padding:5rem 1.2rem}
+  .contact-h2{font-size:clamp(2rem,9vw,3rem)}
+  .contact-sub{font-size:.9rem}
+  .contact-email{font-size:1.1rem;word-break:break-all}
+  .contact-platforms{gap:.6rem}
+  .platform-link{font-size:.65rem;padding:.45rem 1rem}
+
+  /* Footer */
+  footer{
+    flex-direction:column;gap:.5rem;
+    text-align:center;padding:1.5rem 1.2rem;
+  }
+  .foot-copy{font-size:.62rem}
+}
+
+/* ── SMALL PHONES ────────────────────────────── */
+@media(max-width:400px){
+  .hero-name{font-size:clamp(2.4rem,12vw,3.2rem)}
+  .proj-title{font-size:1.3rem}
+  .skills-grid{grid-template-columns:1fr}
+}
+
 </style>
 </head>
 <body>
@@ -200,7 +302,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:1.8rem 4
 
 <section id="projects">
   <div class="sec-label fi">02 — Projects</div>
-  <h2 class="sec-h2 fi">Five real projects.<br><span class="accent">Built. Delivered.</span></h2>
+  <h2 class="sec-h2 fi">Five projects<br><span class="accent">I have built.</span></h2>
 
   <div class="projects-list">
 
